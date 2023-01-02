@@ -18,19 +18,26 @@ while True:
 
 def build_board():
     """
-    Gets the size of the board and builds it
+    Gets the size of the board and builds the rows
     """
     for x in range(board_size):
         board.append(["O"] * board_size)
     return board_size
 
 
+letters = "ABCDEFGHIJ"
+
+
 def print_board():
     """
-    Prints the board
+    Builds the entire board and prints it
     """
+    column_letters = letters[0: (board_size)]
+    print(" %s%s" % (" ", " ".join(column_letters)))
+    row_number = 1
     for row in board:
-        print((" ").join(row))
+        print("%d|%s|" % (row_number, "|".join(row)))
+        row_number += 1
 
 
 build_board()
