@@ -28,15 +28,12 @@ def build_grid():
     return grid_size
 
 
-letters = "ABCDEFGHIJ"
-
-
 def print_grid():
     """
     Builds the entire grid and prints it
     """
-    column_letters = letters[0: (grid_size)]
-    print(" %s%s" % (" ", " ".join(column_letters)))
+    column_names = 'ABCDEFGH'[:grid_size]
+    print('  ' + ' '.join(column_names))
     row_number = 1
     for row in grid:
         print("%d|%s|" % (row_number, "|".join(row)))
@@ -72,8 +69,20 @@ def build_ships():
             ship_position = [ship_row, ship_column]
             all_ship_locations.append(ship_position) 
             placed_ships += 1
-    
+    print(all_ship_locations)
+
+
+def player_guess():
+    player_row = input("Please pick which row you want: ")
+    player_column = input("Please pick which column you want: ")
+    guess = [int(player_row), int(player_column)]
+    if guess in all_ship_locations:
+        print("well done you guessed correctly!")
+    else:
+        print(guess)
+
 
 build_grid()
 print_grid()
 build_ships()
+player_guess()
