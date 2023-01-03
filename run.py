@@ -1,7 +1,7 @@
 from random import randint
 
 grid = []
-num_of_ships = 8
+num_of_ships = 10
 all_ship_locations = []
 
 
