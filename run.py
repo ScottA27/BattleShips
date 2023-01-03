@@ -43,3 +43,13 @@ def print_board():
 build_board()
 print_board()
 
+def random_row():
+    return randint(1,len(board))
+
+
+def random_column():
+    return randint(1,len(board[0]))
+
+
+print(random_row())
+print(random_column())
