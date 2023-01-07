@@ -74,17 +74,22 @@ def build_ships():
     print(all_ship_locations)
 
 
-def player_guess():
-    player_row = input("Please pick which row you want: ")
-    player_column = input("Please pick which column you want: ")
-    guess = [int(player_row), (player_column)]
-    if guess in all_ship_locations:
-        print("well done you guessed correctly!")
-    else:
-        print(guess)
+def validate_coordinates():
+    try:
+        guess_row = input("Please choose the row you'd like to hit: ")
+        while guess_row not in grid_size:
+            print("Out of bounds, you must pick a row within the grid!")
+            guess_row
+
+        guess_column = input("Please choose the column you'd like to hit: ").upper()
+        while guess_column not in column_names:
+            print("Out of bounds, you must pick a column within the grid!")
+            guess_column.upper()
+        
+        return int(guess_row), ALPHABET.index(guess_column)
 
 
 build_grid()
 print_grid()
 build_ships()
-player_guess()
+validate_coordinates()
