@@ -4,6 +4,8 @@ grid = []
 num_of_ships = 10
 all_ship_locations = []
 
+ALPHABET =['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
 
 while True:
     grid_size = input("Enter grid size: ")
@@ -32,7 +34,7 @@ def print_grid():
     """
     Builds the entire grid and prints it
     """
-    column_names = 'ABCDEFGH'[:grid_size]
+    column_names = ALPHABET[:grid_size]
     print('  ' + ' '.join(column_names))
     row_number = 1
     for row in grid:
@@ -75,7 +77,7 @@ def build_ships():
 def player_guess():
     player_row = input("Please pick which row you want: ")
     player_column = input("Please pick which column you want: ")
-    guess = [int(player_row), int(player_column)]
+    guess = [int(player_row), (player_column)]
     if guess in all_ship_locations:
         print("well done you guessed correctly!")
     else:
