@@ -4,8 +4,16 @@ grid = []
 num_of_ships = 10
 all_ship_locations = []
 
-ALPHABET =['A', 'B', 'C', 'D', 'E', 'F', 'G']
-
+letters_to_numbers = {
+    "A": 0,
+    "B": 1,
+    "C": 2,
+    "D": 3,
+    "E": 4,
+    "F": 5,
+    "G": 6,
+    "H": 7
+}
 
 while True:
     grid_size = input("Enter grid size: ")
@@ -34,7 +42,7 @@ def print_grid():
     """
     Builds the entire grid and prints it
     """
-    column_names = ALPHABET[:grid_size]
+    column_names = "ABCDEFGH"[:grid_size]
     print('  ' + ' '.join(column_names))
     row_number = 1
     for row in grid:
@@ -75,18 +83,34 @@ def build_ships():
 
 
 def validate_coordinates():
-    try:
+    """
+    Takes cooridinates from the player and checks if they are valid
+    """
+    guess_row = input("Please choose the row you'd like to hit: ")
+    guess_row = int(guess_row)
+    while guess_row not in list(range(grid_size)):
+        print("Out of bounds, you must pick a row within the grid!")
         guess_row = input("Please choose the row you'd like to hit: ")
-        while guess_row not in grid_size:
-            print("Out of bounds, you must pick a row within the grid!")
-            guess_row
 
-        guess_column = input("Please choose the column you'd like to hit: ").upper()
-        while guess_column not in column_names:
-            print("Out of bounds, you must pick a column within the grid!")
-            guess_column.upper()
-        
-        return int(guess_row), ALPHABET.index(guess_column)
+    guess_column = input(
+        "Please choose the column you'd like to hit: ").upper()
+    guess_column = letters_to_numbers[guess_column]
+    while guess_column not in list(range(grid_size)):
+        print("Out of bounds, you must pick a column within the grid!")
+        print(guess_column)
+        guess_column = input(
+            "Please choose the column you'd like to hit: ").upper()
+    guess = [guess_row, guess_column]
+    if guess in all_ship_locations:
+        print("You sunk a ship!")
+        grid[guess_row - 1][guess_column - 1] = "X"
+    elif (grid[guess_row - 1][guess_column - 1]) == "X":
+        print("You've already guessed that one!")
+    elif (grid[guess_row - 1][guess_column - 1]) == "-":
+        print("You've already guessed that one!")
+    else:
+        print("You failed to hit a target!")
+        grid[guess_row - 1][guess_column - 1] = "-"
 
 
 build_grid()
