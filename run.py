@@ -4,16 +4,6 @@ grid = []
 num_of_ships = 10
 all_ship_locations = []
 
-letters_to_numbers = {
-    "A": 0,
-    "B": 1,
-    "C": 2,
-    "D": 3,
-    "E": 4,
-    "F": 5,
-    "G": 6,
-    "H": 7
-}
 
 while True:
     grid_size = input("Enter grid size: ")
@@ -86,20 +76,33 @@ def validate_coordinates():
     """
     Takes cooridinates from the player and checks if they are valid
     """
+    letters_to_numbers = {
+        "A": 1,
+        "B": 2,
+        "C": 3,
+        "D": 4,
+        "E": 5,
+        "F": 6,
+        "G": 7,
+        "H": 8
+        }
+
+    row_list = [x + 1 for x in list(range(grid_size))]
+
     guess_row = input("Please choose the row you'd like to hit: ")
     guess_row = int(guess_row)
-    while guess_row not in list(range(grid_size)):
+    while guess_row not in row_list:
         print("Out of bounds, you must pick a row within the grid!")
         guess_row = input("Please choose the row you'd like to hit: ")
-
+        guess_row = int(guess_row)
     guess_column = input(
         "Please choose the column you'd like to hit: ").upper()
     guess_column = letters_to_numbers[guess_column]
-    while guess_column not in list(range(grid_size)):
+    while guess_column not in row_list:
         print("Out of bounds, you must pick a column within the grid!")
-        print(guess_column)
         guess_column = input(
             "Please choose the column you'd like to hit: ").upper()
+        guess_column = letters_to_numbers[guess_column]
     guess = [guess_row, guess_column]
     if guess in all_ship_locations:
         print("You sunk a ship!")
