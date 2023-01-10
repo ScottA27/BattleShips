@@ -79,14 +79,10 @@ def validate_coordinates():
     """
     global SHIPS_HIT
     letters_to_numbers = {
-        "A": 1,
-        "B": 2,
-        "C": 3,
-        "D": 4,
-        "E": 5,
-        "F": 6,
-        "G": 7,
-        "H": 8
+        "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9,
+        "J": 10, "K": 11, "L": 12, "M": 13, "N": 14, "O": 15, "P": 16, "Q": 17,
+        "R": 18, "S": 19, "T": 20, "U": 21, "V": 22, "W": 23, "X": 24, "Y": 25,
+        "Z": 26
         }
 
     row_list = [x + 1 for x in list(range(GRID_SIZE))]
@@ -94,19 +90,28 @@ def validate_coordinates():
     tries = (GRID_SIZE * GRID_SIZE) // 2
     while tries > 0:
         guess_row = input("Please choose the row you'd like to hit: ")
-        guess_row = int(guess_row)
-        while guess_row not in row_list:
-            print("Out of bounds, you must pick a row within the grid!")
-            guess_row = input("Please choose the row you'd like to hit: ")
+        if guess_row.isdigit():
             guess_row = int(guess_row)
-        guess_column = input(
-            "Please choose the column you'd like to hit: ").upper()
-        guess_column = letters_to_numbers[guess_column]
-        while guess_column not in row_list:
-            print("Out of bounds, you must pick a column within the grid!")
+            if guess_row not in row_list:
+                print("Out of bounds, you must pick a row within the grid!")
+                continue
+        else:
+            print("You must enter a number within the grid!")
+            continue
+        while True:
             guess_column = input(
                 "Please choose the column you'd like to hit: ").upper()
-            guess_column = letters_to_numbers[guess_column]
+            if guess_column.isalpha():
+                guess_column = letters_to_numbers[guess_column]
+                if guess_column not in row_list:
+                    print(
+                        "Out of bounds, you must pick a column within the grid!")
+                    continue
+                else:
+                    break
+            else:
+                print("You must enter a letter within the grid!")
+                continue
         guess = [guess_row, guess_column]
         if guess in all_ship_locations:
             print("You sunk a ship!")
