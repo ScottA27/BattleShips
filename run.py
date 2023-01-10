@@ -113,14 +113,13 @@ def validate_coordinates():
                 print("You must enter a letter within the grid!")
                 continue
         guess = [guess_row, guess_column]
+        if grid[guess_row - 1][guess_column - 1] == "X" or grid[guess_row - 1][guess_column - 1] == "-":
+            print("You've already guessed that one!")
+            continue
         if guess in all_ship_locations:
             print("You sunk a ship!")
             grid[guess_row - 1][guess_column - 1] = "X"
             SHIPS_HIT += 1
-        elif (grid[guess_row - 1][guess_column - 1]) == "X":
-            print("You've already guessed that one!")
-        elif (grid[guess_row - 1][guess_column - 1]) == "-":
-            print("You've already guessed that one!")
         else:
             print("You failed to hit a target!")
             grid[guess_row - 1][guess_column - 1] = "-"
