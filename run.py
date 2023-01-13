@@ -143,7 +143,7 @@ def validate_coordinates():
             grid[guess_row - 1][guess_column - 1] = "-"
         if SHIPS_HIT == NUM_OF_SHIPS:
             print_grid()
-            print("Contgratulations you have won!")
+            print("Contgratulations you have won battleships!")
             print("---------------------------------------------")
             break
         else:
