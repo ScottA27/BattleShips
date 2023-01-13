@@ -5,8 +5,13 @@ NUM_OF_SHIPS = 10
 all_ship_locations = []
 SHIPS_HIT = 0
 
+print("---------------------------------------------")
+print("           Welcome To Battleships            ")
+print("First, lets pick the size of the battlefield")
+print("you would like to play on.")
+
 while True:
-    GRID_SIZE = input("Enter grid size: ")
+    GRID_SIZE = input("Please enter the grid size here: ")
     if GRID_SIZE.isdigit():
         GRID_SIZE = int(GRID_SIZE)
         if GRID_SIZE >= 3 and GRID_SIZE <= 8:
@@ -17,6 +22,12 @@ while True:
     else:
         print("You must enter a number between 3 and 8 in order to play!")
         continue
+
+
+print("---------------------------------------------")
+print("Now you'll pick co-ordinates to seek out the")
+print("enemy ships. If you manage to sink all the")
+print("ships on the field you win the game!")
 
 
 def build_grid():
@@ -32,12 +43,14 @@ def print_grid():
     """
     Builds the entire grid and prints it
     """
+    print("---------------------------------------------")
     column_names = "ABCDEFGH"[:GRID_SIZE]
     print('  ' + ' '.join(column_names))
     row_number = 1
     for row in grid:
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
+    print("---------------------------------------------")
 
 
 def build_ships():
@@ -87,6 +100,8 @@ def validate_coordinates():
 
     row_list = [x + 1 for x in list(range(GRID_SIZE))]
 
+    print(f"You have hit {SHIPS_HIT} ships out of {NUM_OF_SHIPS}!")
+
     tries = (GRID_SIZE * GRID_SIZE) // 2
     while tries > 0:
         guess_row = input("Please choose the row you'd like to hit: ")
@@ -114,25 +129,31 @@ def validate_coordinates():
                 continue
         guess = [guess_row, guess_column]
         if grid[guess_row - 1][guess_column - 1] == "X" or grid[guess_row - 1][guess_column - 1] == "-":
+            print("---------------------------------------------")
             print("You've already guessed that one!")
             continue
         if guess in all_ship_locations:
+            print("---------------------------------------------")
             print("You sunk a ship!")
             grid[guess_row - 1][guess_column - 1] = "X"
             SHIPS_HIT += 1
         else:
+            print("---------------------------------------------")
             print("You failed to hit a target!")
             grid[guess_row - 1][guess_column - 1] = "-"
         if SHIPS_HIT == NUM_OF_SHIPS:
             print_grid()
             print("Contgratulations you have won!")
+            print("---------------------------------------------")
             break
         else:
             tries -= 1
+            print(f"You have hit {SHIPS_HIT} ships out of {NUM_OF_SHIPS}!")
             print(f"You have {tries} shots left.")
             if tries == 0:
                 print_grid()
                 print("You have lost, better luck next time!")
+                print("---------------------------------------------")
                 break
         print_grid()
 
