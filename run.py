@@ -11,7 +11,7 @@ print("First, lets pick the size of the battlefield")
 print("you would like to play on.")
 
 while True:
-    GRID_SIZE = input("Please enter the grid size here: ")
+    GRID_SIZE = input("Please enter the grid size here:\n")
     if GRID_SIZE.isdigit():
         GRID_SIZE = int(GRID_SIZE)
         if GRID_SIZE >= 3 and GRID_SIZE <= 8:
@@ -104,7 +104,7 @@ def validate_coordinates():
 
     tries = (GRID_SIZE * GRID_SIZE) // 2
     while tries > 0:
-        guess_row = input("Please choose the row you'd like to hit: ")
+        guess_row = input("Please choose the row you'd like to hit:\n")
         if guess_row.isdigit():
             guess_row = int(guess_row)
             if guess_row not in row_list:
@@ -115,7 +115,7 @@ def validate_coordinates():
             continue
         while True:
             guess_column = input(
-                "Please choose the column you'd like to hit: ").upper()
+                "Please choose the column you'd like to hit:\n").upper()
             if guess_column.isalpha():
                 guess_column = letters_to_numbers[guess_column]
                 if guess_column not in row_list:
