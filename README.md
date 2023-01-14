@@ -50,9 +50,32 @@ This battleships game is simple and easy to use for players of all ages. The sim
 * Play again button
     * I would have liked to have added a button which would refresh the game and let the user play again. I however, didn't have enough time to do so.
 
-
 ## Testing 
 
+### PEP8
+
+* I used the Code Institutes own PEP8 Python linter. This passed me 2 errors which are to do with the length of lines. However, when I try to fix by putting the code across 2 lines the code doesn't work.
+
+### Browser Compatability
+
+* The programme has been tested on the following browsers:
+    * Chrome
+    * Firefox
+    * Safari
+
+### Bugs 
+
+#### Solved Bugs
+
+* There was a problem initially in the "validate coordinates" function where if they player would guess the same co-ordinates it would still count it as though a shot had been taken. After going over the code I figured out that the problem was easily solved by adding a simple continue statement within the if statement that checks if the player has already guessed those co-ordinates.
+
+#### Unsolved Bugs
+
+* There are no unsolved bugs that I am aware of.
+
 ## Deployment
+
+
+
 
 ## Credits

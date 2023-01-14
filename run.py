@@ -67,7 +67,7 @@ def build_ships():
             ship_row = randint(1, (GRID_SIZE))
             ship_column = randint(1, (GRID_SIZE))
             ship_position = [ship_row, ship_column]
-            all_ship_locations.append(ship_position) 
+            all_ship_locations.append(ship_position)
             placed_ships += 1
     elif GRID_SIZE >= 5 and GRID_SIZE <= 6:
         NUM_OF_SHIPS = 5
@@ -75,7 +75,7 @@ def build_ships():
             ship_row = randint(1, (GRID_SIZE))
             ship_column = randint(1, (GRID_SIZE))
             ship_position = [ship_row, ship_column]
-            all_ship_locations.append(ship_position) 
+            all_ship_locations.append(ship_position)
             placed_ships += 1
     else:
         NUM_OF_SHIPS = 10
@@ -83,7 +83,7 @@ def build_ships():
             ship_row = randint(1, (GRID_SIZE))
             ship_column = randint(1, (GRID_SIZE))
             ship_position = [ship_row, ship_column]
-            all_ship_locations.append(ship_position) 
+            all_ship_locations.append(ship_position)
             placed_ships += 1
 
 
