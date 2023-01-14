@@ -163,6 +163,10 @@ def validate_coordinates():
 
 
 def run_game():
+    """
+    Run Game function.
+    Takes all of the above functions and puts them in the correct order.
+    """
     build_grid()
     print_grid()
     build_ships()
