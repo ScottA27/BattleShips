@@ -7,6 +7,13 @@ This battleships game is simple and easy to use for players of all ages. The sim
 
 ### Existing/current Features
 
+* Opening Message
+
+    * This message welcomes the player to the game.
+    * Asks the player to enter which size of grid they'd like to play on (this is essentially choosing the difficulty of the game).
+
+screenshot
+
 ### Potential Future Features
 
 ## Testing 
