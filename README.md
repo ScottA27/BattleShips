@@ -68,6 +68,7 @@ This battleships game is simple and easy to use for players of all ages. The sim
 #### Solved Bugs
 
 * There was a problem initially in the "validate coordinates" function where if they player would guess the same co-ordinates it would still count it as though a shot had been taken. After going over the code I figured out that the problem was easily solved by adding a simple continue statement within the if statement that checks if the player has already guessed those co-ordinates.
+* There was another problem I came across in the "validate coordinates" function where if the player would guess a letter that wasn't on the grid it would pass an error, stopping the game. I realised the problem was that I only had values for letters up to "H". I fixed this by assigning all letters a value from 1-26.
 
 #### Unsolved Bugs
 
