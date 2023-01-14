@@ -41,6 +41,16 @@ This battleships game is simple and easy to use for players of all ages. The sim
 
 ### Potential Future Features
 
+* Boards for computer and player
+    * This would mean that the player and computer would go head to head in order to see who can sink the others ships.
+* Ship Placement
+    * This would go hand in hand with the first potential feature. If the player had a board they could pick where they'd like to place their ships allowing it to be more immersive.
+* Refresh grid instead of continuously printing it
+    * This would mean the programme would all be on one screen and save the need for any scrolling. It would also make the game look alot cleaner and more presentable.
+* Play again button
+    * I would have liked to have added a button which would refresh the game and let the user play again. I however, didn't have enough time to do so.
+
+
 ## Testing 
 
 ## Deployment
