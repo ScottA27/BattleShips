@@ -10,11 +10,13 @@ print("           Welcome To Battleships            ")
 print("First, lets pick the size of the battlefield")
 print("you would like to play on.")
 
+# While statement asks user which grid size they'd like to play with
 while True:
     GRID_SIZE = input("Please enter the grid size here:\n")
     if GRID_SIZE.isdigit():
         GRID_SIZE = int(GRID_SIZE)
         if GRID_SIZE >= 3 and GRID_SIZE <= 8:
+            print("---------------------------------------------")
             print("Well done now let's get this game started!")
             break
         else:
@@ -83,12 +85,14 @@ def build_ships():
             ship_position = [ship_row, ship_column]
             all_ship_locations.append(ship_position) 
             placed_ships += 1
-    print(all_ship_locations)
 
 
 def validate_coordinates():
     """
-    Takes cooridinates from the player and checks if they are valid
+    Takes cooridinates from the player and checks if they are valid.
+    If valid this will use the given coordinates to see if the player
+    has hit or missed a ship.
+    This will also print win/loss message at the end of the game.
     """
     global SHIPS_HIT
     letters_to_numbers = {
