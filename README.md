@@ -86,3 +86,11 @@ This game was deployed through Heroku, using the Code Institutes mock terminal.
 
 
 ## Credits
+
+Multiple resources where used in the making of this game.
+
+* Austin Montgomery's [Python for Beginners: Battleship](https://bigmonty12.github.io/battleship).
+* [This Trinket page](https://trinket.io/python/051179b6d3).
+* [This rtodto page](https://rtodto.net/a-simple-battleship-python-script/).
+* [Stackoverflow](https://stackoverflow.com/) helped with a lot of the questions or small issues I had.
+* The Code Institutes slack community also deserves credit as there were multiple occasions when I turned to them for help.
