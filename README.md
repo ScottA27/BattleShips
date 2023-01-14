@@ -75,7 +75,14 @@ This battleships game is simple and easy to use for players of all ages. The sim
 
 ## Deployment
 
+This game was deployed through Heroku, using the Code Institutes mock terminal.
 
+* Steps for deployment:
+    * Fork/clone the repository
+    * Create a new app on Heroku
+    * Set the buildpacks to Python and NodeJS, in that order
+    * Link the app on Heroku to the repository
+    * Click on the "deploy" button
 
 
 ## Credits
