@@ -11,6 +11,7 @@ print("First, lets pick the size of the grid you")
 print("would like to play on. Just enter a number")
 print("between 3 and 8. 3 is the easiest and if you")
 print("want a real test 8 is the most difficult.")
+print("---------------------------------------------")
 # While statement asks user which grid size they'd like to play with
 while True:
     GRID_SIZE = input("Please enter the grid size here:\n")
