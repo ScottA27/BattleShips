@@ -119,14 +119,14 @@ def validate_coordinates():
         else:
             print("You must enter a number within the grid!")
             continue
+        message = "Out of bounds, you must pick a column within the grid!"
         while True:
             guess_column = input(
                 "Please choose the column you'd like to hit:\n").upper()
             if guess_column.isalpha():
                 guess_column = letters_to_numbers[guess_column]
                 if guess_column not in row_list:
-                    print(
-                        "Out of bounds, you must pick a column within the grid!")
+                    print(message)
                     continue
                 else:
                     break
@@ -134,19 +134,21 @@ def validate_coordinates():
                 print("You must enter a letter within the grid!")
                 continue
         guess = [guess_row, guess_column]
-        if grid[guess_row - 1][guess_column - 1] == "X" or grid[guess_row - 1][guess_column - 1] == "-":
+        guess_c = guess_column - 1
+        guess_r = guess_row - 1
+        if grid[guess_r][guess_c] == "X" or grid[guess_r][guess_c] == "-":
             print("---------------------------------------------")
             print("You've already guessed that one!")
             continue
         if guess in all_ship_locations:
             print("---------------------------------------------")
             print("You sunk a ship!")
-            grid[guess_row - 1][guess_column - 1] = "X"
+            grid[guess_r][guess_c] = "X"
             SHIPS_HIT += 1
         else:
             print("---------------------------------------------")
             print("You failed to hit a target!")
-            grid[guess_row - 1][guess_column - 1] = "-"
+            grid[guess_r][guess_c] = "-"
         if SHIPS_HIT == NUM_OF_SHIPS:
             print_grid()
             print("Contgratulations you have won battleships!")
