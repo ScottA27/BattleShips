@@ -1,7 +1,7 @@
 # Battleships
 
-This is my interpretation of the popular board game, battleships. It allows the player to challenge themselves against the computer, which randomly generates ships depending on the grid size chosen by the player. The player will try guess where all of the ships are hidden and if they manage to find them they win the game.
-This battleships game is simple and easy to use for players of all ages. The simplicity of the programme results in quick, fun games.
+This is my interpretation of the popular board game, battleships. It allows the player to challenge themselves against the computer, which randomly generates ships depending on the grid size chosen by the player. The player will try to guess where all of the ships are hidden and if they manage to find them they win the game.
+This battleships game is simple and easy to use for players of all ages. The simplicity of the program results in quick, fun games.
 
 ## Features
 
@@ -46,15 +46,23 @@ This battleships game is simple and easy to use for players of all ages. The sim
 * Ship Placement
     * This would go hand in hand with the first potential feature. If the player had a board they could pick where they'd like to place their ships allowing it to be more immersive.
 * Refresh grid instead of continuously printing it
-    * This would mean the programme would all be on one screen and save the need for any scrolling. It would also make the game look alot cleaner and more presentable.
+    * This would mean the program would all be on one screen and save the need for any scrolling. It would also make the game look alot cleaner and more presentable.
 * Play again button
     * I would have liked to have added a button which would refresh the game and let the user play again. I however, didn't have enough time to do so.
+
+## Flowchart
+
+This was my original plan for my battleships game. All of the basic fundamentals of the plan are there to see in the finished game now. The flowchart was created using [Lucid Charts](https://www.lucidchart.com/pages/).
+
+![flowchart](/assets/images/flowchart.png)
 
 ## Testing 
 
 ### PEP8
 
-* I used the Code Institutes own PEP8 Python linter. This passed me 2 errors which are to do with the length of lines. However, when I try to fix by putting the code across 2 lines the code doesn't work.
+* I used the Code Institutes own PEP8 Python linter. This passed me no errors as seen in the image below:
+
+![PEP8](/assets/images/PEP8.png)
 
 ### Browser Compatability
 
