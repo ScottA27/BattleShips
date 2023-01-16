@@ -12,7 +12,7 @@ This battleships game is simple and easy to use for players of all ages. The sim
     * This message welcomes the player to the game.
     * Asks the player to enter which size of grid they'd like to play on (this is essentially choosing the difficulty of the game).
 
-![opening message](/assets/images/welcome-message.png)
+![opening message](/assets/images/welcome-msg.png)
 
 * Rules
 
@@ -48,7 +48,7 @@ This battleships game is simple and easy to use for players of all ages. The sim
 * Refresh grid instead of continuously printing it
     * This would mean the program would all be on one screen and save the need for any scrolling. It would also make the game look alot cleaner and more presentable.
 * Play again button
-    * I would have liked to have added a button which would refresh the game and let the user play again. I however, didn't have enough time to do so.
+    * I would have liked to have added a button which would refresh the game and let the user play again.
 
 ## Flowchart
 
